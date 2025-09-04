@@ -1,2 +1,3 @@
 plugins:
     - jekyll-relative-links
+baseurl: https://hanover-cs.github.io/HC26-Champine-Delaney-Senior-Project/
