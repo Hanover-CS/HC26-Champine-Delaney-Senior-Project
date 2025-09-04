@@ -24,6 +24,9 @@ jobs:
                 path: ./docs/_site
     deploy_pages:
         runs-on: ubuntu-latest
+        permissions:
+          pages: write
+          id-token: write
         needs: build_docs
         steps:
             - name: deploy
