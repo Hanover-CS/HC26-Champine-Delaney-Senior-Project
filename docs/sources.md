@@ -1,24 +1,28 @@
 ---
 ---
-# First Resource: ReciMe Cooking App
+An android app that logs insect/other discoveries as pictures with location and date
 
-[ReciMe](https://recime.app/)
-Primary source
-This is an existing app that has search-by-ingredient functions and meal planning capabilities. It is an app used to find recipes, save recipes, and create meal plans for yourself. It shows nutrition facts and recommends recipes based on previous activity.
+My app will allow you to save discoveries in a database with description, time, and date. May use API like inaturalist to help user identify. Keeps track of discoveries in an organized way. May incorporate maps and recognition software.
 
-The apps features that I would like to have are searching by ingredient, saving recipes, and showing nutrition facts.
+## First resource: Picture Insect
 
-# Second Resource: Spoonacular API
+A similar existing app is Picture Insect which lets users identify insects using image recognition software. The app does keep track of discoveries but does not organize it well and does not let the user add personal notes to the data entry or keep track of date and time.
 
-[Spoonacular](https://spoonacular.com/food-api)
-This is an API containing thousands of recipes and is used by many recipe apps. It can provide data on ingredients, recipes, and many other food-related categories. 
+[Picture Insect App](https://pictureinsect.com/)
 
-This is a resource I think would be useful for my app in order to get access to so much data about recipes and ingredients.
+## Second Resource: Inaturalist API
 
-# Third Resource: Room DB
+
+## Third Resource: Room DB
 
 [Room DB](https://developer.android.com/training/data-storage/room)
 
 This is a tool for creating databases with Android Studio in Android apps.
 
 This is a resource I think I will be able to use to keep track of data in my app and remember the user's information even after they leave the app.
+
+## languages:
+Kotlin: for Android app functionality
+Jetpack Compose: for UI in app
+Python: for functionality possibly with PyTorch
+

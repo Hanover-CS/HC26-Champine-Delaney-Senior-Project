@@ -1,5 +1,4 @@
 ---
 ---
 
-[sources](./sources.md)
-[proposal](./proposal.md)
+[link to proposal](./sources.md)
