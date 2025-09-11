@@ -4,7 +4,7 @@ plugins:
 baseurl: /HC26-Champine-Delaney-Senior-Project
 lsi: false
 safe: true
-source: docs
+source: .
 incremental: false
 highlighter: rouge
 gist:
