@@ -24,5 +24,5 @@ This is a resource I think I will be able to use to keep track of data in my app
 ## languages:
 Kotlin: for Android app functionality
 Jetpack Compose: for UI in app
-Python: for functionality possibly with PyTorch
+Python used in Google colab to train and export AI. 
 

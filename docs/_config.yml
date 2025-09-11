@@ -1,3 +1,6 @@
 plugins:
     - jekyll-relative-links
+    - jekyll-remote-theme
 baseurl: /HC26-Champine-Delaney-Senior-Project
+lsi: false
+remote_theme: pages-themes/tactile@v0.2.0
