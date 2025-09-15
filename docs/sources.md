@@ -23,6 +23,12 @@ This is a resource I think I will be able to use to keep track of data in my app
 
 ## languages:
 Kotlin: for Android app functionality
+I chose Kotlin specifically because of its easy to read and understand code and because it has some security measures in place that other languages such as c++ and Java do not have. This could mean less time trying to fix problems in the code and more time improving my project.
 Jetpack Compose: for UI in app
+I chose Kotlin and Jetpack Compose because I have experience making Android apps with them and setting up the environment.
 Python used in Google colab to train and export AI. 
+I chose Google Colab because it is probably the most efficient way to train image recognition software for free.
+
+
+
 
