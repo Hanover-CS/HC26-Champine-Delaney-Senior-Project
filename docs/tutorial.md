@@ -10,7 +10,7 @@ This tutorial will explain how to set up, train, and test an instance of PyTorch
 
 Add necessary imports at the top of your code cell
 
-We need to import the necessary PyTorch resources before we start using it.   
+We need to import our Drive files as well as the necessary PyTorch resources before we start using it.   
 Here are the imports we need:  
 ```
 import torch
@@ -19,4 +19,10 @@ import torch.optim as optim
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms, models
 from google.colab import drive
+```
+
+### Step 2: Dataset
+In order to train the AI in image recognition, you need to have a dataset ready to train it with. Use this command next to point to the location of your dataset in your Google Drive.
+```
+data_dir = "/content/drive/MyDrive/dataset"
 ```
