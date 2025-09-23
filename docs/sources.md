@@ -1,5 +1,6 @@
 ---
 ---
+# Title
 An android app that logs insect/other discoveries with photos, location, and date
 
 My app will allow you to save discoveries in a database with description, time, date, and personal notes. It will implement a trained AI model that is trained to identify at least the family that the insect is in, Beetle/Coleoptera for example. Keeps track of discoveries in an organized way and allows users to search by time, location, or group.
@@ -28,8 +29,8 @@ This is a resource I think I will be able to use to keep track of data in my app
     - I chose Kotlin specifically because of its easy to read and understand code and because it has some security measures in place that other languages such as c++ and Java do not have. This could mean less time trying to fix problems in the code and more time improving my project.
 - Jetpack Compose: for UI in app
     - I chose Kotlin and Jetpack Compose because I have experience making Android apps with them and setting up the environment.
-- Python used in Google colab to train and export AI. 
-    I chose Google Colab because it is probably the most efficient way to train image recognition software for free.
+- Python
+    - Python is used in Google colab to train and export AI. I chose Google Colab because it is probably the most efficient way to train image recognition software for free.
 - SQL
     - I will need to use SQL to make queries from inaturalist API and manage my own database in Android Studio. As far as I know, SQL is the only language used for interacting with relational databases. However, I do know that it is by far the most widely used for its versitility and ease of use.
 
