@@ -1,6 +1,7 @@
 ---
 ---
 # Title
+
 An android app that logs insect/other discoveries with photos, location, and date
 
 My app will allow you to save discoveries in a database with description, time, date, and personal notes. It will implement a trained AI model that is trained to identify at least the family that the insect is in, Beetle/Coleoptera for example. Keeps track of discoveries in an organized way and allows users to search by time, location, or group.
