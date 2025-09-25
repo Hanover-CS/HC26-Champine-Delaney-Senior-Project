@@ -8,6 +8,8 @@ An Android app that logs insect/other discoveries with photos, location, and dat
 My app will allow you to save discoveries in a database with description, time, date, and personal notes. It will implement a trained AI model that is trained to identify at least the family that the insect is in, Beetle/Coleoptera for example. Keeps track of discoveries in an organized way and allows users to search by time, location, or group.
 
 ***
+# Existing Solutions
+
 ## First Solution: Picture Insect
 
 A similar existing app is Picture Insect which lets users identify insects using image recognition software. The app does keep track of discoveries but does not organize it well and does not let the user add personal notes to the data entry or keep track of date and time.
@@ -21,6 +23,8 @@ This is an app that does everything I want my app to be able to do and much more
 [Seek](https://www.inaturalist.org/)
 
 ***
+# Android Studio Resources
+
 ## First Android Resource: Android Studio
 
 Android Studio is  the IDE that I will be using to program and test the Android app that I am making. It often supports Android Emulators: virtual machines that allow you to test apps and app functionality. However, I have an Android phone set up to test my apps on, so I will not be using this. Android Studio is designed specifically for Android apps and is therefore optimized to build them.
@@ -36,6 +40,8 @@ This is a resource I will be able to use to keep track of data in my app and rem
 [Room DB](https://developer.android.com/training/data-storage/room)
 
 ***
+# AI Training Resources
+
 ## First AI Resource: Google Colaboratory
 
 Google Colaboratory or Google Colab is a service that allows you to write and execute python code as well as write text in the same document. It makes it easy to share code with others and provides access to GPUs for free. Google Colab uses Jupyter Notebook Environment to achieve this. 
@@ -57,7 +63,7 @@ PyTorch is an open source machine learning library developed by Meta AI. It is a
 I will be using a PyTorch AI model within Google Colab. I will be training it to recognize different groups of insects and maybe even specific species depending on how well the initial training goes. 
 
 ***
-## languages:
+# languages:
 
 - Kotlin: for Android app functionality
     - I chose Kotlin specifically because of its easy to read and understand code and because it has some security measures in place that other languages such as c++ and Java do not have. This could mean less time trying to fix problems in the code and more time improving my project.
