@@ -6,9 +6,9 @@
 An Android app that logs insect/other discoveries with photos, location, and date
 
 My app will allow you to save discoveries in a database with description, time, date, and personal notes. It will implement a trained AI model that is trained to identify at least the family that the insect is in, Beetle/Coleoptera for example. Keeps track of discoveries in an organized way and allows users to search by time, location, or group.
-
-
-
+<br>
+<br>
+<br>
 ***
 # Existing Solutions
 ***
@@ -24,9 +24,10 @@ A similar existing app is Picture Insect which lets users identify insects using
 This is an app that does everything I want my app to be able to do and much more. It has an AI model that can identify any kind of animal, plant, or fungus. it organizes everything well. Most of the images captured by its thousands of users are uploaded into their API, which makes their AI model more accurate. The app is also able to use the information from its users to track the locations of certain animals and gather data on them, making their app more useful. the app only organizes observations by broad animal groups such as plants, fungus, or mammal, I hope to offer more options hopefully in a way that does not overcomplicate the search function. 
 
 [Seek](https://www.inaturalist.org/)
-
-
-
+<br>
+<br>
+<br>
+<br>
 ***
 # Android Studio Resources
 *** 
@@ -44,9 +45,9 @@ This is a tool for creating databases with Android Studio in Android apps. It wo
 This is a resource I will be able to use to keep track of data in my app and remember the user's information even after they leave the app.
 
 [Room DB](https://developer.android.com/training/data-storage/room)
-
-
-
+<br>
+<br>
+<br>
 ***
 # AI Training Resources
 ***
@@ -70,9 +71,9 @@ If i want to train an AI model to recognize insect images, I will need a lot of 
 PyTorch is an open source machine learning library developed by Meta AI. It is a popular choice for beginners as it is easy to use and very flexible. It is also chosen for more advanced projects for its efficient AI learning tools. 
 
 I will be using a PyTorch AI model within Google Colab. I will be training it to recognize different groups of insects and maybe even specific species depending on how well the initial training goes. 
-
-
-
+<br>
+<br>
+<br>
 ***
 ## languages:
 ***
@@ -95,5 +96,4 @@ I will be using a PyTorch AI model within Google Colab. I will be training it to
 ## References
 ***
 
-1
     
