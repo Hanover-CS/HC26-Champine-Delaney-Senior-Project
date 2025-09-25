@@ -6,8 +6,8 @@
 An Android app that logs insect/other discoveries with photos, location, and date
 
 My app will allow you to save discoveries in a database with description, time, date, and personal notes. It will implement a trained AI model that is trained to identify at least the family that the insect is in, Beetle/Coleoptera for example. Keeps track of discoveries in an organized way and allows users to search by time, location, or group.
-***
 
+***
 ## First Solution: Picture Insect
 
 A similar existing app is Picture Insect which lets users identify insects using image recognition software. The app does keep track of discoveries but does not organize it well and does not let the user add personal notes to the data entry or keep track of date and time.
@@ -70,3 +70,7 @@ I will be using a PyTorch AI model within Google Colab. I will be training it to
     - Tensorflow is another similar AI learning model. It is also open source and free to use. Ultimately, i decided to use PyTorch instead because of its more beginner friendly nature.
 - SQL
     - I will need to use SQL to make queries from inaturalist API and manage my own database in Android Studio. As far as I know, SQL is the only language used for interacting with relational databases. However, I do know that it is by far the most widely used for its versitility and ease of use.
+
+    ***
+    ## References
+    ***
