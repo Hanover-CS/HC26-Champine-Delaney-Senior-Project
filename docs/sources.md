@@ -9,6 +9,7 @@ My app will allow you to save discoveries in a database with description, time, 
 
 ***
 # Existing Solutions
+***
 
 ## First Solution: Picture Insect
 
@@ -24,6 +25,7 @@ This is an app that does everything I want my app to be able to do and much more
 
 ***
 # Android Studio Resources
+*** 
 
 ## First Android Resource: Android Studio
 
@@ -41,6 +43,7 @@ This is a resource I will be able to use to keep track of data in my app and rem
 
 ***
 # AI Training Resources
+***
 
 ## First AI Resource: Google Colaboratory
 
@@ -64,6 +67,7 @@ I will be using a PyTorch AI model within Google Colab. I will be training it to
 
 ***
 # languages:
+***
 
 - Kotlin: for Android app functionality
     - I chose Kotlin specifically because of its easy to read and understand code and because it has some security measures in place that other languages such as c++ and Java do not have. This could mean less time trying to fix problems in the code and more time improving my project.
@@ -80,3 +84,4 @@ I will be using a PyTorch AI model within Google Colab. I will be training it to
     ***
     ## References
     ***
+    
