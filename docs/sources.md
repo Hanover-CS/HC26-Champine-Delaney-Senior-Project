@@ -97,7 +97,7 @@ I will be using a PyTorch AI model within Google Colab. I will be training it to
 
 
 ***
-# <p align="center">References</p>
+# <h2 align="center">References</h2>
 ***
 <br>
 
