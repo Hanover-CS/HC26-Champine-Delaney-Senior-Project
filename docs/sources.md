@@ -25,6 +25,8 @@ A similar existing app is Picture Insect which lets users identify insects using
 
 This is an app that does everything I want my app to be able to do and much more. It has an AI model that can identify any kind of animal, plant, or fungus. it organizes everything well. Most of the images captured by its thousands of users are uploaded into their API, which makes their AI model more accurate. The app is also able to use the information from its users to track the locations of certain animals and gather data on them, making their app more useful. the app only organizes observations by broad animal groups such as plants, fungus, or mammal, I hope to offer more options hopefully in a way that does not overcomplicate the search function. 
 
+![Inaturalist Image](/docs/images/flamingo.png)
+
 [Reference Page](#seek)
 <br>
 <br>
