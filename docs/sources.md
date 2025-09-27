@@ -17,7 +17,7 @@ My app will allow you to save discoveries in a database with description, time, 
 
 A similar existing app is Picture Insect which lets users identify insects using image recognition software. The app does keep track of discoveries but does not organize it well and does not let the user add personal notes to the data entry or keep track of date and time.
 
-![Alt text](https://assets.digitalocean.com/articles/alligator/boo.svg "Picture Insect App")
+![Alt text](/docs/images/flamingo.png "Picture Insect App")
 
 [Reference page](#picture-insect)
 
@@ -97,7 +97,7 @@ I will be using a PyTorch AI model within Google Colab. I will be training it to
 
 
 ***
-## <p align="center">References</p>
+# <p align="center">References</p>
 ***
 <br>
 
