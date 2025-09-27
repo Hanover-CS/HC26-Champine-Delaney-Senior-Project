@@ -10,20 +10,22 @@ My app will allow you to save discoveries in a database with description, time, 
 <br>
 <br>
 ***
-# Existing Solutions
+# Existing Solutions: 
 ***
 
 ## First Solution: Picture Insect
 
 A similar existing app is Picture Insect which lets users identify insects using image recognition software. The app does keep track of discoveries but does not organize it well and does not let the user add personal notes to the data entry or keep track of date and time.
 
-[Picture Insect App](https://pictureinsect.com/)
+![Alt text](https://assets.digitalocean.com/articles/alligator/boo.svg "Picture Insect App")
+
+[Reference page](#picture-insect)
 
 ## Second Solution: Seek by Inaturalist
 
 This is an app that does everything I want my app to be able to do and much more. It has an AI model that can identify any kind of animal, plant, or fungus. it organizes everything well. Most of the images captured by its thousands of users are uploaded into their API, which makes their AI model more accurate. The app is also able to use the information from its users to track the locations of certain animals and gather data on them, making their app more useful. the app only organizes observations by broad animal groups such as plants, fungus, or mammal, I hope to offer more options hopefully in a way that does not overcomplicate the search function. 
 
-[Seek](https://www.inaturalist.org/)
+[Reference Page](#seek)
 <br>
 <br>
 <br>
@@ -36,7 +38,7 @@ This is an app that does everything I want my app to be able to do and much more
 
 Android Studio is  the IDE that I will be using to program and test the Android app that I am making. It often supports Android Emulators: virtual machines that allow you to test apps and app functionality. However, I have an Android phone set up to test my apps on, so I will not be using this. Android Studio is designed specifically for Android apps and is therefore optimized to build them.
 
-[Android Studio](https://developer.android.com/studio)
+[Reference Page](#android-studio)
 
 ## Second Android Resource: Room DB
 
@@ -44,7 +46,7 @@ This is a tool for creating databases with Android Studio in Android apps. It wo
 
 This is a resource I will be able to use to keep track of data in my app and remember the user's information even after they leave the app.
 
-[Room DB](https://developer.android.com/training/data-storage/room)
+[Reference Page](#room-db)
 <br>
 <br>
 <br>
@@ -58,19 +60,21 @@ Google Colaboratory or Google Colab is a service that allows you to write and ex
 
 This is where I will gather images from Inaturalist API and train and test the PyTorch AI model. The GPU that the service provides is very helpful in training an AI model in image recognition. Google Colabs direct connection to Google Drive also makes storing and editing my dataset easier.
 
-[Google Colab](https://colab.research.google.com/)
+[Reference Page](#google-colab)
 
 ## Second AI Resource: Inaturalist API
 
 If i want to train an AI model to recognize insect images, I will need a lot of images, hundreds or thousands for each group. Inaturalist API is a community database of natural history discovery images. You can query the API for insects, plants, mushrooms and other things of that type, and get back thousands of images. I will be using this API to get images to train my AI model.
 
-[Inaturalist](https://www.inaturalist.org/)
+[Reference Page](#inaturalist)
 
 ## Third AI Resource: PyTorch
 
 PyTorch is an open source machine learning library developed by Meta AI. It is a popular choice for beginners as it is easy to use and very flexible. It is also chosen for more advanced projects for its efficient AI learning tools. 
 
 I will be using a PyTorch AI model within Google Colab. I will be training it to recognize different groups of insects and maybe even specific species depending on how well the initial training goes. 
+
+[Reference Page](#pytorch)
 <br>
 <br>
 <br>
@@ -95,5 +99,34 @@ I will be using a PyTorch AI model within Google Colab. I will be training it to
 ***
 ## References
 ***
+<br>
 
+## Picture Insect
+
+...
+[Picture Insect App](https://pictureinsect.com/)
+
+## Seek
+
+[Seek](https://www.inaturalist.org/)
+
+## Android Studio
+
+[Android Studio](https://developer.android.com/studio)
+
+## Room DB
+
+[Room DB](https://developer.android.com/training/data-storage/room)
+
+## Google Colab
+
+[Google Colab](https://colab.research.google.com/)
+
+## Inaturalist
+
+[Inaturalist](https://www.inaturalist.org/)
+
+## PyTorch
+
+[PyTorch](https://pytorch.org/)
     
