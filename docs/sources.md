@@ -17,7 +17,7 @@ My app will allow you to save discoveries in a database with description, time, 
 
 A similar existing app is Picture Insect which lets users identify insects using image recognition software. The app does keep track of discoveries but does not organize it well and does not let the user add personal notes to the data entry or keep track of date and time.
 
-![Alt text](/docs/images/flamingo.png "Picture Insect App")
+![Alt text](/docs/images/flamingo.png)
 
 [Reference page](#picture-insect)
 
