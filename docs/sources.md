@@ -99,7 +99,7 @@ I will be using a PyTorch AI model within Google Colab. I will be training it to
 
 
 ***
-# <h2 align="center">References</h2>
+# <h2 style="text-align: center;">References</h2>
 ***
 <br>
 
