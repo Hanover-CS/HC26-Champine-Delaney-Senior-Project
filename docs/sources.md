@@ -9,7 +9,7 @@ My app will allow you to save discoveries in a database with description, time, 
 <br>
 <br>
 <br>
-***
+<br>
 # Existing Solutions: 
 ***
 
@@ -30,7 +30,7 @@ This is an app that does everything I want my app to be able to do and much more
 <br>
 <br>
 <br>
-***
+<br>
 # Android Studio Resources
 *** 
 
@@ -50,7 +50,7 @@ This is a resource I will be able to use to keep track of data in my app and rem
 <br>
 <br>
 <br>
-***
+<br>
 # AI Training Resources
 ***
 
@@ -78,7 +78,7 @@ I will be using a PyTorch AI model within Google Colab. I will be training it to
 <br>
 <br>
 <br>
-***
+<br>
 ## languages:
 ***
 
@@ -97,7 +97,7 @@ I will be using a PyTorch AI model within Google Colab. I will be training it to
 
 
 ***
-## References
+## <p align="center">References</p>
 ***
 <br>
 
