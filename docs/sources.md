@@ -54,6 +54,7 @@ This is a resource I will be able to use to keep track of data in my app and rem
 <br>
 <br>
 <br>
+<br>
 # AI Training Resources
 ***
 
@@ -82,6 +83,7 @@ I will be using a PyTorch AI model within Google Colab. I will be training it to
 <br>
 <br>
 <br>
+<br>
 ## languages:
 ***
 
@@ -97,7 +99,8 @@ I will be using a PyTorch AI model within Google Colab. I will be training it to
 - SQL
     - I will need to use SQL to make queries from inaturalist API and manage my own database in Android Studio. As far as I know, SQL is the only language used for interacting with relational databases. However, I do know that it is by far the most widely used for its versitility and ease of use.
 
-
+<br>
+<br>
 
 ***
 <h2 style="text-align: center">References</h2>
