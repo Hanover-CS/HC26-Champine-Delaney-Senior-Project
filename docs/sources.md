@@ -9,7 +9,6 @@ My app will allow you to save discoveries in a database with description, time, 
 <br>
 <br>
 <br>
-<br>
 # Existing Solutions: 
 ***
 
@@ -17,19 +16,24 @@ My app will allow you to save discoveries in a database with description, time, 
 
 A similar existing app is Picture Insect which lets users identify insects using image recognition software. The app does keep track of discoveries but does not organize it well and does not let the user add personal notes to the data entry or keep track of date and time.
 
-![image-test-two](./images/flamingo.png)
+| Home Page                                    | Collection Page
+| -------------------------------------------- | --------------------------------------------
+| ![image-test-two](./images/picture_menu.PNG) | ![image-test-two](./images/picture_collection.PNG)
+
+![image-test-two](./images/picture_menu.PNG)
+
+![image-test-two](./images/picture_collection.PNG)
 
 
 [Reference page](#picture-insect)
 
 ## Second Solution: Seek by Inaturalist
 
-This is an app that does everything I want my app to be able to do and much more. It has an AI model that can identify any kind of animal, plant, or fungus. it organizes everything well. Most of the images captured by its thousands of users are uploaded into their API, which makes their AI model more accurate. The app is also able to use the information from its users to track the locations of certain animals and gather data on them, making their app more useful. the app only organizes observations by broad animal groups such as plants, fungus, or mammal, I hope to offer more options hopefully in a way that does not overcomplicate the search function. 
+This is an app that does everything I want my app to be able to do and more. It has an AI model that can identify any kind of animal, plant, or fungus. it organizes everything well. Most of the images captured by its thousands of users are uploaded into their API, which makes their AI model more accurate. The app is also able to use the information from its users to track the locations of certain animals and gather data on them, making their app more useful. the app only organizes observations by broad animal groups such as plants, fungus, or mammal, I hope to offer more options hopefully in a way that does not overcomplicate the search function. 
 
 ![image-test](./images/llama.jpg)
 
 [Reference Page](#seek)
-<br>
 <br>
 <br>
 <br>
@@ -50,7 +54,6 @@ This is a tool for creating databases with Android Studio in Android apps. It wo
 This is a resource I will be able to use to keep track of data in my app and remember the user's information even after they leave the app.
 
 [Reference Page](#room-db)
-<br>
 <br>
 <br>
 <br>
@@ -83,7 +86,6 @@ I will be using a PyTorch AI model within Google Colab. I will be training it to
 <br>
 <br>
 <br>
-<br>
 ## languages:
 ***
 
@@ -109,7 +111,6 @@ I will be using a PyTorch AI model within Google Colab. I will be training it to
 
 ## Picture Insect
 
-...
 [Picture Insect App](https://pictureinsect.com/)
 
 ## Seek
