@@ -20,9 +20,6 @@ A similar existing app is Picture Insect which lets users identify insects using
 | ------------------------------------------------ | --------------------------------------------
 | ![image-test-two](./images/picture_menu.PNG)     | ![image-test-two](./images/picture_collection.PNG)
 
-![image-test-two](./images/picture_menu.PNG)
-
-![image-test-two](./images/picture_collection.PNG)
 
 
 [Reference page](#picture-insect)
