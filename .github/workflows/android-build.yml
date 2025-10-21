@@ -74,18 +74,18 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK Debug
-          path: ${{ env.main_project_module }}/{{ env.android_module }}/build/outputs/apk/debug/
+          path: ${{ env.main_project_module }}/${{ env.android_module }}/build/outputs/apk/debug/
 
       # Upload APK Release
       - name: Upload APK Release
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK Release
-          path: ${{ env.main_project_module }}/{{ env.android_module }}/build/outputs/apk/release/
+          path: ${{ env.main_project_module }}/${{ env.android_module }}/build/outputs/apk/release/
 
       # Upload AAB Release
       - name: Upload AAB Release
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - AAB Release
-          path: ${{ env.main_project_module }}/{{ env.android_module }}/build/outputs/bundle/release/
+          path: ${{ env.main_project_module }}/${{ env.android_module }}/build/outputs/bundle/release/
