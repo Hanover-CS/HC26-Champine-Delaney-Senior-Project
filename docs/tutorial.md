@@ -59,11 +59,13 @@ This line tells the system to use the GPU if it is enabled and use the CPU other
 model = models.mobilenet_v2(weights="IMAGENET1K_V1")
 ```
 This line loads in a pretrained mobileNet AI model. Starting from a pretrained model is much faster than starting from scratch with a new model.
+
 ```
 for param in model.features.parameters():
     param.requires_grad = False
 ```
 This freexes the feature extractor which makes the learning faster
+
 ```
 num_classes = len(train_dataset.classes)
 model.classifier[1] = nn.Linear(model.last_channel, num_classes)
@@ -88,6 +90,7 @@ Next you want to create a variable called epochs(which is a machine learning tem
 epochs = 5
 ```
 Next, this is the code that will run to actually train and gather data on the AI model and it will repeat for each epoch
+
 ```
 for epoch in range(epochs):
     model.train()
@@ -100,6 +103,7 @@ for epoch in range(epochs):
     optimizer.step()
 ```
 once this has run, you can use the following line to print the results for this training session:
+
 ```
 print(f"Epoch {epoch+1}/{epochs}, Loss: ..., Val Acc: ...")
 ```
