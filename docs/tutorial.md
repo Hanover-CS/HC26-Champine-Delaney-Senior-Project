@@ -4,6 +4,12 @@
 ## AI Image Training With Google Colaboratory  
 This tutorial will explain how to set up, train, and test an instance of PyTorch AI. Specifically training and testing it in image recognition: to be able to interperate images and visual data in a way that is helpful for us.
 ### Step 1: Set Up  
+
+we will be using python in google colab for this type of training. A general knowledge of Python code would be helpful. In addition to this, you will need a dataset already prepared in your google drive with a file layout like this: 
+
+![example_dataset](./images/Dataset.PNG)
+
+
   First, sign into Google Colaboratory using a Google account.  
   
   Next, Create a new Notebook through Google Colab or Google Drive. Google Colab is connected to other Google applications on the account and "Notebooks" created can be managed in Google Drive. Notebooks in Google Colab are documents that can hold both text and executable code. Or, in our case, Notebooks allow users to easily access PyTorch AI and Images in our Google Drive in the same document and help us easily export the AI when training is finished.
@@ -12,6 +18,7 @@ Add necessary imports at the top of your code cell
 
 We need to import our Drive files as well as the necessary PyTorch resources before we start using it.   
 Here are the imports we need:  
+
 ```
 import torch
 import torch.nn as nn
@@ -107,3 +114,9 @@ once this has run, you can use the following line to print the results for this 
 ```
 print(f"Epoch {epoch+1}/{epochs}, Loss: ..., Val Acc: ...")
 ```
+
+Using the tools in this tutorial, different datasets, and modifying variables based on the test results, you may be able to train an AI model in image recognition. For more information on the tools used, here are links to the documentation for each below.
+
+[Google Colab Documentation: ](https://docs.cloud.google.com/colab/docs)
+
+[PyTorch Documentation: ](https://docs.pytorch.org/docs/stable/index.html)
