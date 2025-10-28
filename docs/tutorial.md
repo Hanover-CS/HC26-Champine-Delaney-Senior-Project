@@ -119,6 +119,6 @@ print(f"Epoch {epoch+1}/{epochs}, Loss: ..., Val Acc: ...")
 
 Using the tools in this tutorial, different datasets, and modifying variables based on the test results, you may be able to train an AI model in image recognition. For more information on the tools used, here are links to the documentation for each below.
 
-[Google Colab Documentation: ](https://docs.cloud.google.com/colab/docs)
+[Google Colab Documentation](https://docs.cloud.google.com/colab/docs)
 
-[PyTorch Documentation: ](https://docs.pytorch.org/docs/stable/index.html)
+[PyTorch Documentation](https://docs.pytorch.org/docs/stable/index.html)
