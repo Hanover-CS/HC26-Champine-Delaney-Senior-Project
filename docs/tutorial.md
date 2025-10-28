@@ -7,7 +7,9 @@ This tutorial will explain how to set up, train, and test an instance of PyTorch
 
 we will be using python in google colab for this type of training. A general knowledge of Python code would be helpful. In addition to this, you will need a dataset already prepared in your google drive with a file layout like this: 
 
-![example_dataset](./images/Dataset.PNG)
+| Example Dataset Layout
+| -----------------------------------------
+| ![example_dataset](./images/Dataset.PNG)
 
 
   First, sign into Google Colaboratory using a Google account.  
