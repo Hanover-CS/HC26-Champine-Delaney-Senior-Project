@@ -10,11 +10,11 @@ we will be using python in google colab for this type of training. A general kno
 ![example_dataset](./images/Dataset.png)
 
 
-  The more images you have for training, the better. The images should all be high quality and there should be about 80% in the training folder, which is for training the AI, and 20% in the val folder which is for testing the AI.
+The more images you have for training, the better. The images should all be high quality and there should be about 80% in the training folder, which is for training the AI, and 20% in the val folder which is for testing the AI
 
-  Once your dataset is set up, sign into Google Colaboratory using a Google account.  
+Once your dataset is set up, sign into Google Colaboratory using a Google account.  
   
-  Next, Create a new Notebook through Google Colab or Google Drive. Google Colab is connected to other Google applications on the account and "Notebooks" created can be managed in Google Drive. Notebooks in Google Colab are documents that can hold both text and executable code. Or, in our case, Notebooks allow users to easily access PyTorch AI and Images in our Google Drive in the same document and help us easily export the AI when training is finished.
+Next, Create a new Notebook through Google Colab or Google Drive. Google Colab is connected to other Google applications on the account and "Notebooks" created can be managed in Google Drive. Notebooks in Google Colab are documents that can hold both text and executable code. Or, in our case, Notebooks allow users to easily access PyTorch AI and Images in our Google Drive in the same document and help us easily export the AI when training is finished.
 
 Add necessary imports at the top of your code cell
 
