@@ -10,7 +10,7 @@ we will be using python in google colab for this type of training. A general kno
 ![example_dataset](./images/Dataset.png)
 
 
-The more images you have for training, the better. The images should all be high quality and there should be about 80% in the training folder, which is for training the AI, and 20% in the val folder which is for testing the AI
+The more images you have for training, the better. The images should all be high quality and there should be about 80% in the training folder, which is for training the AI, and 20% in the val folder which is for testing the AI.
 
 Once your dataset is set up, sign into Google Colaboratory using a Google account.  
   
