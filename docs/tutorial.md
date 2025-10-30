@@ -7,7 +7,7 @@ This tutorial will explain how to set up, train, and test an instance of PyTorch
 
 we will be using python in google colab for this type of training. A general knowledge of Python code would be helpful. In addition to this, you will need a dataset already prepared in your google drive with a file layout like this: 
 
-![example_dataset](./docs/images/Dataset.PNG)
+![example_dataset](./images/Dataset.png)
 
 
   The more images you have for training, the better. The images should all be high quality and there should be about 80% in the training folder, which is for training the AI, and 20% in the val folder which is for testing the AI.
