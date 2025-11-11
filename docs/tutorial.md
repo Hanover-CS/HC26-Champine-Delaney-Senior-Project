@@ -73,7 +73,7 @@ This line loads in a pretrained mobileNet AI model. Starting from a pretrained m
 for param in model.features.parameters():
     param.requires_grad = False
 ```
-This freexes the feature extractor which makes the learning faster
+This freezes the feature extractor which makes the learning faster
 
 ```
 num_classes = len(train_dataset.classes)
@@ -93,7 +93,7 @@ The first line of code here sets the loss function. Aloss function in machine le
 
 And the second line sets the Optimizer to Adam which is a commonly used and well working Optimizer.
 
-Next you want to create a variable called epochs(which is a machine learning tem used to mean an entire pass through a dataset) and set it to however many epochs you want, i will start with 5
+Next you want to create a variable called epochs(which is a machine learning tem used to mean an entire pass through a dataset) and set it to however many epochs you want, I will start with 5
 
 ```
 epochs = 5
