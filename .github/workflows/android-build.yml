@@ -55,10 +55,6 @@ jobs:
       - name: Build Gradle project
         run: cd ${{ env.main_project_module }} && ./gradlew build
 
-      # Build APK Debug
-      - name: Build APK Debug
-        run: cd ${{ env.main_project_module }} && ./gradlew ${{ env.android_module }}:assembleDebug
-
       # Build APK Release
       - name: Build APK Release
         run: cd ${{ env.main_project_module }} && ./gradlew ${{ env.android_module }}:assembleRelease
@@ -66,13 +62,6 @@ jobs:
       # Build AAB Release
       - name: Build App Bundle Release (AAB)
         run: cd ${{ env.main_project_module }} && ./gradlew ${{ env.android_module }}:bundleRelease
-
-      # Upload APK Debug
-      - name: Upload APK Debug
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK Debug
-          path: ${{ env.main_project_module }}/${{ env.android_module }}/build/outputs/apk/debug/
 
       # Upload APK Release
       - name: Upload APK Release
