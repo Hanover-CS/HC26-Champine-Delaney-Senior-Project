@@ -12,7 +12,8 @@ env:
 
 on:
   push:
-  workflow_dispatch:
+    tags:
+      - "v*"
 
 jobs:
   build:
@@ -63,16 +64,29 @@ jobs:
       - name: Build App Bundle Release (AAB)
         run: cd ${{ env.main_project_module }} && ./gradlew ${{ env.android_module }}:bundleRelease
 
-      # Upload APK Release
-      - name: Upload APK Release
-        uses: actions/upload-artifact@v4
+      - name: create github release
+        uses: softprops/action-gh-release@v2
         with:
-          name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK Release
-          path: ${{ env.main_project_module }}/${{ env.android_module }}/build/outputs/apk/release/
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+      # Upload APK to Release
+      - name: Upload APK to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ${{ env.main_project_module }}/${{ env.android_module }}/build/outputs/apk/release/*.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Upload AAB Release
-      - name: Upload AAB Release
-        uses: actions/upload-artifact@v4
+      # Upload AAB to Release 
+      - name: Upload AAB to Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - AAB Release
-          path: ${{ env.main_project_module }}/${{ env.android_module }}/build/outputs/bundle/release/
+          files: |
+            ${{ env.main_project_module }}/${{ env.android_module }}/build/outputs/bundle/release/*.aab
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
