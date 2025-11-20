@@ -76,12 +76,11 @@ If i want to train an AI model to recognize insect images, I will need a lot of 
 
 ## Third AI Resource: PyTorch
 
-PyTorch is an open source machine learning library developed by Meta AI. It is a popular choice for beginners as it is easy to use and very flexible. It is also chosen for more advanced projects for its efficient AI learning tools. 
+PyTorch is an open source machine learning library developed by Meta AI. It is a popular choice for beginners as it is easy to use and very flexible. It is also chosen for more advanced projects for its **efficient** AI learning tools. 
 
 I will be using a PyTorch AI model within Google Colab. I will be training it to recognize different groups of insects and maybe even specific species depending on how well the initial training goes. 
 
 [Reference Page](#pytorch)
-<br>
 <br>
 <br>
 <br>
@@ -95,8 +94,8 @@ I will be using a PyTorch AI model within Google Colab. I will be training it to
     - I chose Kotlin and Jetpack Compose because I have experience making Android apps with them and setting up the environment. It is very easy to understand and to visualize the changes I am making to the UI while writing the code.
     - Another method of creating UI in Android apps is XML based UI development. This method is widely used and the more traditional way to create a UI. One disadvantage that XML development has that Jetpack Compose does not have is that the code for layout and logic are seperate which added a layer of complexity for me that was not in Jetpack compose.
 - Python
-    - Python is used in Google colab to train and export AI. I chose Google Colab because it is probably the most efficient way to train image recognition software for free.
-    - Tensorflow is another similar AI learning model. It is also open source and free to use. Ultimately, i decided to use PyTorch instead because of its more beginner friendly nature.
+    - Python is used in Google colab to train and export AI. I chose Google Colab because it is probably the most **efficient** way to train image recognition software for free.
+    - Tensorflow is another similar AI learning model. It is also open source and free to use. Ultimately, I decided to use PyTorch instead because of its more beginner friendly nature.
 - SQL
     - I will need to use SQL to make queries from inaturalist API and manage my own database in Android Studio. As far as I know, SQL is the only language used for interacting with relational databases. However, I do know that it is by far the most widely used for its versitility and ease of use.
 

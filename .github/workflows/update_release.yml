@@ -1,0 +1,30 @@
+name: update_release
+
+env:
+  # The main folder containing gradlew
+  main_project_module: SeniorProjectDC
+
+  # Android app module inside the main project folder
+  android_module: app
+
+  # The name of the Play Store
+  playstore_name: testing_store
+
+on: 
+  workflow_dispatch:
+
+jobs: 
+    build: 
+        runs-on: ubuntu-latest
+        steps:
+            # Upload Github release
+          - name: Upload Github Release
+            uses: softprops/action-gh-release@v1
+            with:
+                tag_name: 1
+                name: 1
+                files: |
+                    SeniorProjectDC/app/build/outputs/apk/release/*.apk
+                    SeniorProjectDC/app/build/outputs/bundle/release/*.aab
+            env: 
+                GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

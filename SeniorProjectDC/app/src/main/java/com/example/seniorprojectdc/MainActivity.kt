@@ -1,21 +1,17 @@
 package com.example.seniorprojectdc
-
+/*
+This is the main activity file. it sets up the bottom navigation bar, sets the theme,
+and starts the app on the home screen
+ */
 import DetailsScreen
-import android.R
-import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.*
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.Add
@@ -23,21 +19,21 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.seniorprojectdc.ui.theme.SeniorProjectDCTheme
-import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
+import com.example.seniorprojectdc.DB.InsectRepository
+import com.example.seniorprojectdc.screens.AddInsectScreen
+import com.example.seniorprojectdc.screens.EditScreen
+import com.example.seniorprojectdc.screens.HomePage
+import com.example.seniorprojectdc.screens.SettingsPage
+import com.example.seniorprojectdc.screens.viewScreen
 
 
 sealed class Screen(val route: String, val label: String, val icon: ImageVector) {

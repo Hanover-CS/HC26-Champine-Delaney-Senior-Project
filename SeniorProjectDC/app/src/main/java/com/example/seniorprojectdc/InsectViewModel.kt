@@ -1,8 +1,12 @@
 package com.example.seniorprojectdc
+/*
+This is the viewModel. It lets us manage the database and move data from one screen to another
+ */
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.example.seniorprojectdc.DB.InsectRepository
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch

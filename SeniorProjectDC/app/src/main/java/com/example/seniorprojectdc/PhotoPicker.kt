@@ -1,5 +1,9 @@
 package com.example.seniorprojectdc
-
+/*
+This screen gives the user two buttons: one button that will activate the gallery launcher
+and allow the user to pick an already existing photo, and the other button will activate the camera
+and take a photo and return the location of that photo.
+ */
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
