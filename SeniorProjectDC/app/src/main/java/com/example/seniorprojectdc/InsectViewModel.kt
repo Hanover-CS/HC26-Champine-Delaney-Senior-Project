@@ -1,12 +1,19 @@
 package com.example.seniorprojectdc
+import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
-
+fun getCurrentDateString(): String {
+    val formatter = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
+    return formatter.format(Date())
+}
 class InsectViewModel(private val repository: InsectRepository) : ViewModel() {
     val insects = repository.allInsects.stateIn(
         scope = viewModelScope,
@@ -14,15 +21,33 @@ class InsectViewModel(private val repository: InsectRepository) : ViewModel() {
         initialValue = emptyList()
     )
 
-    fun addInsect(name: String, points: Int) {
+    fun addInsect(name: String, imageUri: Uri?, notes: String) {
         viewModelScope.launch {
-            repository.insert(Insect(insectName = name, date = points))
+            repository.insert(
+                Insect(
+                insectName = name,
+                date = getCurrentDateString(),
+                imageUri = imageUri?.toString(),
+                    notes = notes,
+                    nickname = ""
+            )
+            )
         }
     }
 
-    fun deleteInsect(score: Insect) {
+    fun deleteInsect(insect: Insect) {
         viewModelScope.launch {
-            repository.delete(score)
+            repository.delete(insect)
+        }
+    }
+
+    fun getInsectById(id: Int): Insect? {
+        return insects.value.find { it.id == id }
+    }
+
+    fun updateInsect(insect: Insect) {
+        viewModelScope.launch {
+            repository.updateInsect(insect)
         }
     }
 }

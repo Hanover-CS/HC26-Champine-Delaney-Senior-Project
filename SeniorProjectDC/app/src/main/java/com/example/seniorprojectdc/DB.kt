@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import com.example.seniorprojectdc.DAO
 import com.example.seniorprojectdc.Insect
 
-@Database(entities = [Insect::class], version = 1, exportSchema = false)
+@Database(entities = [Insect::class], version = 3, exportSchema = false)
 abstract class InsectDatabase : RoomDatabase() {
     abstract fun insectDao(): DAO
 
@@ -19,7 +19,7 @@ abstract class InsectDatabase : RoomDatabase() {
                     context.applicationContext,
                     InsectDatabase::class.java,
                     "score_database"
-                ).build().also { INSTANCE = it }
+                ).fallbackToDestructiveMigration().build().also { INSTANCE = it }
             }
         }
     }

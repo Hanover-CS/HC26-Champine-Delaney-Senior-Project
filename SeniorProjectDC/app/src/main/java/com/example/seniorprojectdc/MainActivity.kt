@@ -1,5 +1,8 @@
 package com.example.seniorprojectdc
 
+import DetailsScreen
+import android.R
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -32,6 +35,9 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.seniorprojectdc.ui.theme.SeniorProjectDCTheme
+import androidx.lifecycle.viewModelScope
+import androidx.navigation.NavType
+import androidx.navigation.navArgument
 
 
 sealed class Screen(val route: String, val label: String, val icon: ImageVector) {
@@ -67,14 +73,35 @@ fun MainScreen(viewModel: InsectViewModel) {
             composable(Screen.Home.route) { HomePage() }
             composable(Screen.ViewDb.route) {
                 // show the database list here
-                viewScreen(viewModel)
+                viewScreen(viewModel, navController)
             }
             composable(Screen.AddDb.route) {
                 // maybe just reuse InsectScreen or make a separate Add-only screen
-                InsectScreen(viewModel)
+                AddInsectScreen(viewModel)
             }
-            composable(Screen.Profile.route) { ProfilePage() }
+            composable(Screen.Profile.route) { viewScreen(viewModel, navController) }
             composable(Screen.Settings.route) { SettingsPage() }
+            composable(
+                route = "insect_detail/{insectId}",
+                arguments = listOf(navArgument("insectId") { type = NavType.IntType })
+            ) { backStackEntry ->
+                val insectId = backStackEntry.arguments?.getInt("insectId")
+                insectId?.let { id ->
+                    val insect = viewModel.getInsectById(id)
+                    insect?.let { DetailsScreen(viewModel, it, navController) }
+                }
+            }
+            composable(
+                route = "insect_edit/{insectId}",
+                arguments = listOf(navArgument("insectId") { type = NavType.IntType })
+            ) {
+                backStackEntry ->
+                val insectId = backStackEntry.arguments?.getInt("insectId")
+                insectId?.let { id ->
+                    val insect = viewModel.getInsectById(id)
+                    insect?.let { EditScreen(viewModel, it, navController) }
+                }
+            }
         }
     }
 }
@@ -116,62 +143,6 @@ class MainActivity : ComponentActivity() {
                     MainScreen(viewModel)
                 }
             }
-        }
-    }
-}
-
-@Composable
-fun InsectScreen(viewModel: InsectViewModel) {
-    val scores by viewModel.insects.collectAsState()
-
-    var name by remember { mutableStateOf("") }
-    var points by remember { mutableStateOf("") }
-
-    Column(Modifier.padding(16.dp)) {
-        OutlinedTextField(
-            value = name,
-            onValueChange = { name = it },
-            label = { Text("Player Name") },
-            modifier = Modifier.fillMaxWidth()
-        )
-        OutlinedTextField(
-            value = points,
-            onValueChange = { points = it },
-            label = { Text("Points") },
-            modifier = Modifier.fillMaxWidth()
-        )
-        Button(
-            onClick = {
-                if (name.isNotBlank() && points.isNotBlank()) {
-                    viewModel.addInsect(name, points.toIntOrNull() ?: 0)
-                    name = ""
-                    points = ""
-                }
-            },
-            modifier = Modifier.padding(top = 8.dp)
-        ) {
-            Text("Add Score", style = MaterialTheme.typography.bodyMedium)
-        }
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        LazyColumn {
-            items(scores) { score ->
-                Text("${score.insectName}: ${score.date}", style = MaterialTheme.typography.bodySmall)
-            }
-        }
-    }
-}
-
-@Composable
-fun viewScreen(viewModel: InsectViewModel) {
-    val scores by viewModel.insects.collectAsState()
-
-    var name by remember { mutableStateOf("") }
-    var points by remember { mutableStateOf("") }
-    LazyColumn {
-        items(scores) { score ->
-            Text("${score.insectName}: ${score.date}")
         }
     }
 }

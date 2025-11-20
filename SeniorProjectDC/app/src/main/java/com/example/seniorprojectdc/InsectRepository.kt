@@ -10,4 +10,8 @@ class InsectRepository(private val dao: DAO) {
     suspend fun delete(score: Insect) {
         dao.delete(score)
     }
+
+    suspend fun updateInsect(insect: Insect) {
+        dao.updateInsect(insect)
+    }
 }

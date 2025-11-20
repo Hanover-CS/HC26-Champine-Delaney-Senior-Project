@@ -13,4 +13,7 @@ interface DAO {
 
     @Delete
     suspend fun delete(insect: Insect)
+
+    @Update
+    suspend fun updateInsect(insect: Insect)
 }

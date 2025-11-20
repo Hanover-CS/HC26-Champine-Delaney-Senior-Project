@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -41,6 +42,11 @@ android {
 }
 
 dependencies {
+
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6")
+
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation("io.coil-kt:coil-compose:2.6.0")
     implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
