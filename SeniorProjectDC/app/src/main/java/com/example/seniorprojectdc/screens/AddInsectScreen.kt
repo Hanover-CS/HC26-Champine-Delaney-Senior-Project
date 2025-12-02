@@ -24,6 +24,10 @@ import androidx.compose.ui.unit.dp
 import com.example.seniorprojectdc.InsectViewModel
 import com.example.seniorprojectdc.PhotoPickerScreen
 
+/*
+This screen allows users to add new objects to the database. there is an option to
+add an image, name, description, and there will be a button to have AI tell what the insect is
+ */
 @Composable
 fun AddInsectScreen(viewModel: InsectViewModel) {
     var name by remember { mutableStateOf("") }

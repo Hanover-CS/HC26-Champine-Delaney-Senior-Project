@@ -21,6 +21,10 @@ import coil.compose.rememberAsyncImagePainter
 import com.example.seniorprojectdc.Insect
 import com.example.seniorprojectdc.InsectViewModel
 
+/*
+This screen shows the details of a single insect object in the database. all the fields
+in the object are laid out in a lazy column
+ */
 @Composable
 fun DetailsScreen(viewModel: InsectViewModel, insect: Insect, navController: NavController) {
     Column(

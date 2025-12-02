@@ -19,7 +19,11 @@ import androidx.compose.runtime.setValue
 import com.example.seniorprojectdc.Insect
 import com.example.seniorprojectdc.InsectViewModel
 
-
+/*
+This screen appears after the user presses the edit button on an insect details screen.
+it is similar to the add insect screen, only it is updating an entry, not creating a new one.
+you can change anything but the image and then save or discard changes.
+ */
 @Composable
 fun EditScreen(viewModel: InsectViewModel, insect: Insect, navController: NavController){
     var name by remember { mutableStateOf(insect.insectName) }

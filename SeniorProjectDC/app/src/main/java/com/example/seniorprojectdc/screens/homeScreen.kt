@@ -12,6 +12,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+/*
+this is the home screen. It has the app title.
+ */
 @Composable
 fun HomePage() {
     Box(

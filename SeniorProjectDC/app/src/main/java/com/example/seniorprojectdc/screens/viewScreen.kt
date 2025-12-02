@@ -31,6 +31,10 @@ import androidx.compose.foundation.lazy.items
 import androidx.navigation.NavController
 import com.example.seniorprojectdc.InsectViewModel
 
+/*
+This is the view screen, on this screen you can see all the database entries laid out
+on a lazy column. the entries are clickable and will take you to a details screen of the entry.
+ */
 @Composable
 fun viewScreen(viewModel: InsectViewModel, navController: NavController) {
     val Insects by viewModel.insects.collectAsState()

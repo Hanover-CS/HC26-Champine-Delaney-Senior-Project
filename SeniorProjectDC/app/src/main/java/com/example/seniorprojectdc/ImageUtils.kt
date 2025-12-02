@@ -5,8 +5,11 @@ import android.net.Uri
 import android.os.Environment
 import androidx.core.content.FileProvider
 import java.io.File
-import java.text.SimpleDateFormat
-import java.util.*
+
+/*
+This function takes the image information given by the gallery or the camera and turns
+it into a URI which is smaller and easier to store in a DB than the image itself
+ */
 
 fun createImageUri(context: Context): Uri {
     val imageDir = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
