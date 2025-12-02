@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+build/intermediates
+build/kotlin/compileDebugKotlin
