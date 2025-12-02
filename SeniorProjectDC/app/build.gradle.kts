@@ -43,6 +43,8 @@ android {
 
 dependencies {
 
+    implementation("org.pytorch:pytorch_android_lite:1.13.0")
+    implementation("org.pytorch:pytorch_android_torchvision_lite:1.13.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6")
 
     implementation(libs.androidx.lifecycle.runtime.ktx)
