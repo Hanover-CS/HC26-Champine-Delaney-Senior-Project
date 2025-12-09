@@ -1,4 +1,4 @@
-package com.example.seniorprojectdc.DB
+package com.example.seniorprojectdc.database
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.example.seniorprojectdc.Insect
+import com.example.seniorprojectdc.service_classes.Insect
 import kotlinx.coroutines.flow.Flow
 
 @Dao

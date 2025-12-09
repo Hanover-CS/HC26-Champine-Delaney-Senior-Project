@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import androidx.compose.foundation.lazy.items
 import androidx.navigation.NavController
-import com.example.seniorprojectdc.InsectViewModel
+import com.example.seniorprojectdc.service_classes.InsectViewModel
 
 /*
 This is the view screen, on this screen you can see all the database entries laid out

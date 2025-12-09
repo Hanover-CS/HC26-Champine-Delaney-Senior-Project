@@ -16,8 +16,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
-import com.example.seniorprojectdc.Insect
-import com.example.seniorprojectdc.InsectViewModel
+import com.example.seniorprojectdc.service_classes.Insect
+import com.example.seniorprojectdc.service_classes.InsectViewModel
 
 /*
 This screen appears after the user presses the edit button on an insect details screen.

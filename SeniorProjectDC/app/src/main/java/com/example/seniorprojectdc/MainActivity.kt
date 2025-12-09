@@ -28,13 +28,15 @@ import androidx.navigation.compose.composable
 import com.example.seniorprojectdc.ui.theme.SeniorProjectDCTheme
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
-import com.example.seniorprojectdc.DB.InsectRepository
+import com.example.seniorprojectdc.database.InsectRepository
 import com.example.seniorprojectdc.screens.AIMainScreen
 import com.example.seniorprojectdc.screens.AddInsectScreen
 import com.example.seniorprojectdc.screens.EditScreen
 import com.example.seniorprojectdc.screens.HomePage
 import com.example.seniorprojectdc.screens.SettingsPage
 import com.example.seniorprojectdc.screens.viewScreen
+import com.example.seniorprojectdc.service_classes.InsectViewModel
+import com.example.seniorprojectdc.service_classes.InsectViewModelFactory
 
 
 sealed class Screen(val route: String, val label: String, val icon: ImageVector) {

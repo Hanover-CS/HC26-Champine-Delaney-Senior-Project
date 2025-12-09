@@ -1,7 +1,8 @@
-package com.example.seniorprojectdc
+package com.example.seniorprojectdc.service_classes
+
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 /*
@@ -18,4 +19,4 @@ data class Insect(
     var notes: String,
     var nickname: String,
 
-) : Parcelable
+    ) : Parcelable

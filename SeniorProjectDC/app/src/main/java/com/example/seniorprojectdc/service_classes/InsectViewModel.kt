@@ -1,4 +1,4 @@
-package com.example.seniorprojectdc
+package com.example.seniorprojectdc.service_classes
 /*
 This is the viewModel. It lets us manage the database and move data from one screen to another
  */
@@ -6,7 +6,7 @@ import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.seniorprojectdc.DB.InsectRepository
+import com.example.seniorprojectdc.database.InsectRepository
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -29,12 +29,12 @@ class InsectViewModel(private val repository: InsectRepository) : ViewModel() {
         viewModelScope.launch {
             repository.insert(
                 Insect(
-                insectName = name,
-                date = getCurrentDateString(),
-                imageUri = imageUri?.toString(),
+                    insectName = name,
+                    date = getCurrentDateString(),
+                    imageUri = imageUri?.toString(),
                     notes = notes,
                     nickname = ""
-            )
+                )
             )
         }
     }

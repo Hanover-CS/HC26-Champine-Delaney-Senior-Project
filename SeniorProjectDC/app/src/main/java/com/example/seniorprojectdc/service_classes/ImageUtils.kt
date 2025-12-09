@@ -1,4 +1,4 @@
-package com.example.seniorprojectdc
+package com.example.seniorprojectdc.service_classes
 
 import android.content.Context
 import android.graphics.Bitmap

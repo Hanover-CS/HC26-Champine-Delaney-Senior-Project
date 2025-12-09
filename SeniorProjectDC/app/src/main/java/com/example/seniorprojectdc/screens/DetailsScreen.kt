@@ -18,8 +18,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
-import com.example.seniorprojectdc.Insect
-import com.example.seniorprojectdc.InsectViewModel
+import com.example.seniorprojectdc.service_classes.Insect
+import com.example.seniorprojectdc.service_classes.InsectViewModel
 
 /*
 This screen shows the details of a single insect object in the database. all the fields

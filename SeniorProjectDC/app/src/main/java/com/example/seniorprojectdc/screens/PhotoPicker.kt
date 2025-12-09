@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.ContextCompat
 import coil.compose.rememberAsyncImagePainter
-import com.example.seniorprojectdc.createImageUri
+import com.example.seniorprojectdc.service_classes.createImageUri
 
 @Composable
 fun PhotoPickerScreen(onImageSelected: (Uri?) -> Unit) {

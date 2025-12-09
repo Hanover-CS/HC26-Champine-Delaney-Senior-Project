@@ -1,6 +1,6 @@
-package com.example.seniorprojectdc.DB
+package com.example.seniorprojectdc.database
 
-import com.example.seniorprojectdc.Insect
+import com.example.seniorprojectdc.service_classes.Insect
 
 /*
 This is a class that helps manage the database and makes it easier to use. It works with the DAO
