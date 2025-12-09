@@ -15,8 +15,8 @@ import androidx.lifecycle.viewmodel.compose.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Computer
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -29,6 +29,7 @@ import com.example.seniorprojectdc.ui.theme.SeniorProjectDCTheme
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
 import com.example.seniorprojectdc.DB.InsectRepository
+import com.example.seniorprojectdc.screens.AIMainScreen
 import com.example.seniorprojectdc.screens.AddInsectScreen
 import com.example.seniorprojectdc.screens.EditScreen
 import com.example.seniorprojectdc.screens.HomePage
@@ -40,7 +41,7 @@ sealed class Screen(val route: String, val label: String, val icon: ImageVector)
     object Home : Screen("home", "Home", Icons.Default.Home)
     object ViewDb : Screen("view_db", "View DB", Icons.AutoMirrored.Filled.List)
     object AddDb : Screen("add_db", "Add DB", Icons.Default.Add)
-    object Profile : Screen("profile", "Profile", Icons.Default.Person)
+    object Profile : Screen("identify", "Identify", Icons.Default.Computer)
     object Settings : Screen("settings", "Settings", Icons.Default.Settings)
 }
 
@@ -75,7 +76,7 @@ fun MainScreen(viewModel: InsectViewModel) {
                 // maybe just reuse InsectScreen or make a separate Add-only screen
                 AddInsectScreen(viewModel)
             }
-            composable(Screen.Profile.route) { viewScreen(viewModel, navController) }
+            composable(Screen.Profile.route) { AIMainScreen(viewModel, navController) }
             composable(Screen.Settings.route) { SettingsPage() }
             composable(
                 route = "insect_detail/{insectId}",

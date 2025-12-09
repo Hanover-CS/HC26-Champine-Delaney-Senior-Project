@@ -22,7 +22,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.seniorprojectdc.InsectViewModel
-import com.example.seniorprojectdc.PhotoPickerScreen
 
 /*
 This screen allows users to add new objects to the database. there is an option to
@@ -78,7 +77,6 @@ fun AddInsectScreen(viewModel: InsectViewModel) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // 📸 Call your PhotoPickerScreen here
             PhotoPickerScreen(onImageSelected = { uri ->
                 selectedImageUri = uri
             })
@@ -98,11 +96,6 @@ fun AddInsectScreen(viewModel: InsectViewModel) {
             ) {
                 Text("Save to Database")
             }
-            /* Button(onClick = { viewModel.startAIPrediction() }) {
-                Text("Identify with AI")
-            }
-             */
-
         }
     }
 }
