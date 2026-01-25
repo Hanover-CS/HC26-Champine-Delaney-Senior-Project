@@ -21,7 +21,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.seniorprojectdc.InsectViewModel
+import com.example.seniorprojectdc.service_classes.InsectViewModel
 
 /*
 This screen allows users to add new objects to the database. there is an option to

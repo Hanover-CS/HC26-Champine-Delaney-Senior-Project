@@ -18,7 +18,7 @@ abstract class InsectDatabase : RoomDatabase() {
                 Room.databaseBuilder(
                     context.applicationContext,
                     InsectDatabase::class.java,
-                    "score_database"
+                    "insect_database"
                 ).fallbackToDestructiveMigration().build().also { INSTANCE = it }
             }
         }

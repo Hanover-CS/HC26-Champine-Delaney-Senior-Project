@@ -73,4 +73,5 @@ dependencies {
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.compose.googlefonts)
+    testImplementation(kotlin("test"))
 }

@@ -9,12 +9,12 @@ to do this and new functions can be added easily
 class InsectRepository(private val dao: DAO) {
     val allInsects = dao.getAllInsects()
 
-    suspend fun insert(score: Insect) {
-        dao.insert(score)
+    suspend fun insert(insect: Insect) {
+        dao.insert(insect)
     }
 
-    suspend fun delete(score: Insect) {
-        dao.delete(score)
+    suspend fun delete(insect: Insect) {
+        dao.delete(insect)
     }
 
     suspend fun updateInsect(insect: Insect) {

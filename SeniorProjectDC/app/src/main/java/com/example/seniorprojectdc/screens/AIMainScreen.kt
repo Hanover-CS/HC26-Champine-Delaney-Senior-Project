@@ -18,14 +18,12 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.seniorprojectdc.AIModel
-import com.example.seniorprojectdc.InsectViewModel
-import com.example.seniorprojectdc.loadBitmapFromUri
-import kotlinx.coroutines.CoroutineScope
+import com.example.seniorprojectdc.service_classes.AIModel
+import com.example.seniorprojectdc.service_classes.InsectViewModel
+import com.example.seniorprojectdc.service_classes.loadBitmapFromUri
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import kotlin.math.min
 
 @Composable
 fun AIMainScreen(viewModel: InsectViewModel, navController: NavController) {
@@ -49,20 +47,17 @@ fun AIMainScreen(viewModel: InsectViewModel, navController: NavController) {
 
             scope.launch {
                 try {
-                    // Convert URI to bitmap in IO thread
                     val bmp = loadBitmapFromUri(context, it, maxSize = 512)
 
-                    // Update bitmap on main thread
                     bitmap = bmp
 
                     if (bmp != null) {
-                        // Run model in background thread
                         val (label, conf) = withContext(Dispatchers.Default) {
                             model.classify(bmp)
                         }
 
                         if (conf < 0.5f) {
-                            prediction = "Unknown species — try another photo"
+                            prediction = "Unknown species. try another photo"
                             confidence = null
                         } else {
                             prediction = label

@@ -54,6 +54,10 @@ class InsectViewModel(private val repository: InsectRepository) : ViewModel() {
             repository.updateInsect(insect)
         }
     }
+
+    fun setDraftInsect() {
+        
+    }
 }
 
 class InsectViewModelFactory(private val repository: InsectRepository) : ViewModelProvider.Factory {
