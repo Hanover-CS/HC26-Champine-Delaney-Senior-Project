@@ -3,6 +3,7 @@ package com.example.seniorprojectdc.screens
 This page gives the user the ability to put an image through the in-app AI model
 and see if it can be identified. It displays the AI's prediction and confidence level
  */
+import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -27,6 +28,7 @@ import kotlinx.coroutines.withContext
 
 @Composable
 fun AIMainScreen(viewModel: InsectViewModel, navController: NavController) {
+    var imageUri by remember {mutableStateOf<Uri?>(null)}
     val context = LocalContext.current
     var bitmap by remember { mutableStateOf<Bitmap?>(null) }
     var prediction by remember { mutableStateOf<String?>(null) }
@@ -36,11 +38,23 @@ fun AIMainScreen(viewModel: InsectViewModel, navController: NavController) {
     val model = remember { AIModel(context) }
     val scope = rememberCoroutineScope()
 
+    fun resetResult() {
+        bitmap = null
+        prediction = null
+        confidence = null
+        imageUri = null
+    }
+
     // Launcher for selecting image
     val photoLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.GetContent()
+        contract = ActivityResultContracts.OpenDocument()
     ) { uri: Uri? ->
         uri?.let {
+            context.contentResolver.takePersistableUriPermission(
+                it,
+                Intent.FLAG_GRANT_READ_URI_PERMISSION
+            )
+            imageUri = it
             loading = true
             prediction = null
             confidence = null
@@ -84,7 +98,7 @@ fun AIMainScreen(viewModel: InsectViewModel, navController: NavController) {
         Text("Identify Your Discovery with AI", style = MaterialTheme.typography.headlineSmall)
         Spacer(Modifier.height(16.dp))
 
-        Button(onClick = { photoLauncher.launch("image/*") }) {
+        Button(onClick = { photoLauncher.launch(arrayOf("image/*")) }) {
             Text("Select Photo")
         }
 
@@ -110,6 +124,30 @@ fun AIMainScreen(viewModel: InsectViewModel, navController: NavController) {
                 Text("Confidence: ${String.format("%.1f", conf * 10)}%", color = Color.Gray)
             }
         }
+        if (prediction != null && imageUri != null && !loading) {
+            Spacer(Modifier.height(16.dp))
+
+            Button(
+                onClick = {
+                    viewModel.addInsect(
+                        prediction!!,
+                        imageUri!!,
+                        ""
+                    )
+                    resetResult()
+                }
+            ) {
+                Text("Add to Collection")
+            }
+            Button(
+                onClick = {
+                    resetResult()
+                }
+            ) {
+                Text("Clear Result")
+            }
+        }
     }
 }
+
 
