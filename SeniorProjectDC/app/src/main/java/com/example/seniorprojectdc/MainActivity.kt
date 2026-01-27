@@ -136,11 +136,9 @@ class MainActivity : ComponentActivity() {
         val factory = InsectViewModelFactory(repository)
 
         setContent {
-            MaterialTheme {
-                SeniorProjectDCTheme(darkTheme = false, dynamicColor = false) {
-                    val viewModel: InsectViewModel = viewModel(factory = factory)
-                    MainScreen(viewModel)
-                }
+            SeniorProjectDCTheme(darkTheme = false, dynamicColor = false) {
+                val viewModel: InsectViewModel = viewModel(factory = factory)
+                MainScreen(viewModel)
             }
         }
     }
