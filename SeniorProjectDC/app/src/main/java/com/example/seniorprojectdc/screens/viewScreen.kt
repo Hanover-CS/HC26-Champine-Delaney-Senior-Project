@@ -33,6 +33,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -46,7 +47,7 @@ on a lazy column. the entries are clickable and will take you to a details scree
 @Composable
 fun viewScreen(viewModel: InsectViewModel, navController: NavController) {
     val Insects by viewModel.insects.collectAsState()
-
+    var searchText by remember {mutableStateOf("")}
     var expanded by remember { mutableStateOf(false) }
 
     Column(
@@ -58,6 +59,17 @@ fun viewScreen(viewModel: InsectViewModel, navController: NavController) {
                 .padding(16.dp),
             horizontalArrangement = Arrangement.End
         ) {
+            OutlinedTextField(
+                value = searchText,
+                onValueChange = {
+                    searchText = it
+                    viewModel.setSearchQuery(it)
+                },
+                label = { Text("Search insects") },
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(horizontal = 8.dp)
+            )
             Box {
                 OutlinedButton(onClick = { expanded = true }) {
                     Text("Sort")
@@ -92,7 +104,9 @@ fun viewScreen(viewModel: InsectViewModel, navController: NavController) {
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 4.dp).clickable {
                     navController.navigate("insect_detail/${insect.id}")
                 },
-                shape = MaterialTheme.shapes.medium,
+                colors = CardDefaults.cardColors(
+                    MaterialTheme.colorScheme.surface
+                ),
                 elevation = CardDefaults.cardElevation(4.dp)
             )
             {

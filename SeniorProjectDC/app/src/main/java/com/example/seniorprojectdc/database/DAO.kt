@@ -14,6 +14,13 @@ interface DAO {
     @Insert(onConflict = OnConflictStrategy.Companion.REPLACE)
     suspend fun insert(insect: Insect)
 
+    @Query(
+        "SELECT * FROM insects " +
+            "WHERE insectName LIKE '%' || :query || '%' " +
+            "OR nickname LIKE '%' || :query || '%'"
+    )
+    fun searchByName(query: String): Flow<List<Insect>>
+
     @Query("SELECT * FROM insects ORDER BY date DESC")
     fun getAllByDate(): Flow<List<Insect>>
 

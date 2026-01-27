@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.WhileSubscribed
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -25,14 +26,25 @@ fun getCurrentDateString(): String {
 class InsectViewModel( private val repository: InsectRepository) : ViewModel() {
     enum class SortMode { DATE, ALPHABETICAL }
 
+    private val searchQuery = MutableStateFlow("")
     private val sortMode = MutableStateFlow( SortMode.DATE)
-    val insects : StateFlow<List<Insect>> =
-        sortMode.flatMapLatest { mode ->
-            when (mode) {
-                SortMode.DATE -> repository.getAllByDate()
-                SortMode.ALPHABETICAL -> repository.getAllAlphabetical()
-            }
-        }.stateIn(
+
+    val insects: StateFlow<List<Insect>> =
+        combine(searchQuery, sortMode) { query, sort ->
+            Pair(query, sort)
+        }
+            .flatMapLatest { (query, sort) ->
+                when {
+                    query.isNotBlank() ->
+                        repository.searchByName(query)
+
+                    sort == SortMode.ALPHABETICAL ->
+                        repository.getAllAlphabetical()
+
+                    else ->
+                        repository.getAllByDate()
+                }
+            }.stateIn(
             viewModelScope,
             SharingStarted.WhileSubscribed(5000),
             emptyList<Insect>()
@@ -70,6 +82,10 @@ class InsectViewModel( private val repository: InsectRepository) : ViewModel() {
 
     fun setSortMode( mode: SortMode) {
         sortMode.value = mode
+    }
+
+    fun setSearchQuery(query: String) {
+        searchQuery.value = query
     }
 }
 

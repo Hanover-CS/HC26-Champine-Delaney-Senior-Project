@@ -109,7 +109,11 @@ fun MainScreen(viewModel: InsectViewModel) {
 fun BottomNavigationBar(navController: NavHostController) {
     val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
 
-    NavigationBar {
+    NavigationBar (
+        containerColor = MaterialTheme.colorScheme.surface,       // background color
+        contentColor = MaterialTheme.colorScheme.onSurface
+
+    ) {
         bottomNavItems.forEach { screen ->
             NavigationBarItem(
                 selected = currentRoute == screen.route,
@@ -121,7 +125,13 @@ fun BottomNavigationBar(navController: NavHostController) {
                     }
                 },
                 icon = { Icon(screen.icon, contentDescription = screen.label) },
-                label = { Text(screen.label) }
+                label = { Text(screen.label) },
+                colors = NavigationBarItemDefaults.colors(
+                    selectedIconColor = MaterialTheme.colorScheme.onSurface,
+                    selectedTextColor = MaterialTheme.colorScheme.onSurface,
+                    unselectedIconColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
+                    unselectedTextColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+                )
             )
         }
     }

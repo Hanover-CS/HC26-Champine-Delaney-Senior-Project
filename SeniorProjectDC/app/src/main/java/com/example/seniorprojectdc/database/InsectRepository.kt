@@ -1,5 +1,6 @@
 package com.example.seniorprojectdc.database
 
+import android.R
 import com.example.seniorprojectdc.service_classes.Insect
 import kotlinx.coroutines.flow.Flow
 
@@ -9,6 +10,9 @@ to do this and new functions can be added easily
  */
 class InsectRepository(private val dao: DAO) {
     val allInsects = dao.getAllInsects()
+
+    fun searchByName(query: String): Flow<List<Insect>> =
+        dao.searchByName(query)
 
     fun getAllByDate(): Flow<List<Insect>> =
         dao.getAllByDate()
