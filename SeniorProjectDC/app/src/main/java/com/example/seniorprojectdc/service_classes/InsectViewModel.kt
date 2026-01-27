@@ -7,7 +7,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.seniorprojectdc.database.InsectRepository
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.WhileSubscribed
+import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -19,11 +23,20 @@ fun getCurrentDateString(): String {
     return formatter.format(Date())
 }
 class InsectViewModel(private val repository: InsectRepository) : ViewModel() {
-    val insects = repository.allInsects.stateIn(
-        scope = viewModelScope,
-        started = SharingStarted.WhileSubscribed(),
-        initialValue = emptyList()
-    )
+    enum class SortMode { DATE, ALPHABETICAL }
+
+    private val sortMode = MutableStateFlow(SortMode.DATE)
+    val insects : StateFlow<List<Insect>> =
+        sortMode.flatMapLatest { mode ->
+            when (mode) {
+                SortMode.DATE -> repository.getAllByDate()
+                SortMode.ALPHABETICAL -> repository.getAllAlphabetical()
+            }
+        }.stateIn(
+            viewModelScope,
+            SharingStarted.WhileSubscribed(5000),
+            emptyList<Insect>()
+        )
 
     fun addInsect(name: String, imageUri: Uri?, notes: String) {
         viewModelScope.launch {

@@ -15,6 +15,11 @@ interface DAO {
     suspend fun insert(insect: Insect)
 
     @Query("SELECT * FROM insects ORDER BY date DESC")
+    fun getAllByDate(): Flow<List<Insect>>
+
+    @Query("SELECT * FROM insects ORDER BY insectName COLLATE NOCASE ASC")
+    fun getAllAlphabetical(): Flow<List<Insect>>
+    @Query("SELECT * FROM insects ORDER BY date DESC")
     fun getAllInsects(): Flow<List<Insect>>
 
     @Delete
