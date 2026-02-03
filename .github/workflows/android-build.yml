@@ -36,7 +36,6 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ${{ env.main_project_module }}/gradlew
 
-      # 🔽 ADD THIS STEP
       - name: Decode keystore
         run: echo "${{ secrets.ANDROID_KEYSTORE }}" | base64 --decode > ${{ env.main_project_module }}/my-release-key.jks
 
@@ -58,6 +57,12 @@ jobs:
           name: Release ${{ github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: List build outputs
+        run: |
+          echo "APK files:"
+          find ${{ env.main_project_module }} -name "*.apk"
+          ls -R ${{ env.main_project_module }}/${{ env.android_module }}/build/outputs
 
       - name: Upload APK to Release
         uses: softprops/action-gh-release@v2
