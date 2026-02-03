@@ -1,13 +1,8 @@
 name: Generated APK AAB (Upload - Create Artifact To Github Action)
 
 env:
-  # The main folder containing gradlew
   main_project_module: SeniorProjectDC
-
-  # Android app module inside the main project folder
   android_module: app
-
-  # The name of the Play Store
   playstore_name: testing_store
 
 on:
@@ -17,22 +12,17 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout repository
       - uses: actions/checkout@v4
 
-      # Set current date
       - name: Set current date as env variable
         run: echo "date_today=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
-      # Set repository name
       - name: Set repository name as env variable
         run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
 
-      # Set up JDK
       - name: Set Up JDK
         uses: actions/setup-java@v4
         with:
@@ -40,28 +30,25 @@ jobs:
           java-version: '17'
           cache: 'gradle'
 
-      # Set up Android SDK
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      # Make gradlew executable
       - name: Change wrapper permissions
         run: chmod +x ${{ env.main_project_module }}/gradlew
+
+      # 🔽 ADD THIS STEP
+      - name: Decode keystore
+        run: echo "${{ secrets.ANDROID_KEYSTORE }}" | base64 --decode > ${{ env.main_project_module }}/my-release-key.jks
 
       # Run tests
       - name: Run Gradle tests
         run: cd ${{ env.main_project_module }} && ./gradlew test
 
-      # Build project
-      - name: Build Gradle project
-        run: cd ${{ env.main_project_module }} && ./gradlew build
-
-      # Build APK Release
+      # Build signed Release APK + AAB
       - name: Build APK Release
         run: cd ${{ env.main_project_module }} && ./gradlew ${{ env.android_module }}:assembleRelease
 
-      # Build AAB Release
-      - name: Build App Bundle Release (AAB)
+      - name: Build AAB Release
         run: cd ${{ env.main_project_module }} && ./gradlew ${{ env.android_module }}:bundleRelease
 
       - name: create github release
@@ -69,10 +56,9 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
-        env: 
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
-      # Upload APK to Release
+
       - name: Upload APK to Release
         uses: softprops/action-gh-release@v2
         with:
@@ -81,7 +67,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Upload AAB to Release 
       - name: Upload AAB to Release
         uses: softprops/action-gh-release@v2
         with:
@@ -89,4 +74,3 @@ jobs:
             ${{ env.main_project_module }}/${{ env.android_module }}/build/outputs/bundle/release/*.aab
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
